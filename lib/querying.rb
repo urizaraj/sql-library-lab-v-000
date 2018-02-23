@@ -53,5 +53,11 @@ def select_series_title_with_most_human_characters
 end
 
 def select_character_names_and_number_of_books_they_are_in
-  %w[].join(' ')
+  %w[
+    SELECT characters.name, COUNT(characters.name)
+    FROM character_books
+    LEFT JOIN characters
+    ON character_id = characters.id
+    GROUP BY characters.name
+  ].join(' ')
 end
