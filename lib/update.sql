@@ -1,1 +1,5 @@
-UPDATE characters SET species = "Martian" HAVING characters.id = MAX(characters.id)
+UPDATE characters 
+SET species = "Martian" 
+WHERE characters.id = (
+  SELECT MAX(characters.id) FROM characters
+)
