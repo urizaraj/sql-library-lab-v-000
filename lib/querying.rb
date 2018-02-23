@@ -59,5 +59,6 @@ def select_character_names_and_number_of_books_they_are_in
     LEFT JOIN characters
     ON character_id = characters.id
     GROUP BY characters.name
+    ORDER BY COUNT(characters.name) DESC
   ].join(' ')
 end
