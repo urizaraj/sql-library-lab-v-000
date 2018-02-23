@@ -10,7 +10,12 @@ def select_books_titles_and_years_in_first_series_order_by_year
 end
 
 def select_name_and_motto_of_char_with_longest_motto
-  "Write your SQL query here"
+  %w[
+    SELECT name, motto
+    FROM characters
+    ORDER BY LEN(motto) ASC
+    LIMIT 1
+  ].join(' ')
 end
 
 
