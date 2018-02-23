@@ -13,7 +13,7 @@ def select_name_and_motto_of_char_with_longest_motto
   %w[
     SELECT name, motto
     FROM characters
-    ORDER BY LENGTH(motto) ASC
+    ORDER BY LENGTH(motto) DESC
     LIMIT 1
   ].join(' ')
 end
